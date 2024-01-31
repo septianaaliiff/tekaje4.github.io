@@ -1,703 +1,1185 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <!-- aos -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="//db.onlinewebfonts.com/c/021f3eb1da35b2a042907dc870c00b9c?family=TwentiethCenturyW01-XBdCn"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/stylesheet/app.css" />
-    <link rel="stylesheet" href="assets/stylesheet/responsive.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.rawgit.com/michalsnik/aos/2.0.1/dist/aos.css"
-    />
-    <title>Alif Profile</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vCard - Personal Portfolio</title>
 
-  <body>
-    <ul class="nav justify-content-center bg-light fixed-top">
-      <li class="nav-item">
-        <!-- <a class="nav-link" href="#"> -->
-        <a
-          class="buttonToggle"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasWithBothOptions"
-          aria-controls="offcanvasWithBothOptions"
-          ><i class="fas fa-bars toggleSlide"></i
-        ></a>
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
 
-        <div
-          class="offcanvas offcanvas-start"
-          data-bs-scroll="true"
-          tabindex="-1"
-          id="offcanvasWithBothOptions"
-          aria-labelledby="offcanvasWithBothOptionsLabel"
-        >
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
-              Please select a menu :
-            </h5>
-            <button
-              type="button"
-              class="btn-close text-reset"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul>
-              <li>
-                <a class="nav-link" href="#Biodata">Biodata</a>
-              </li>
-              <li>
-                <a class="nav-link" href="#Achievements">Achievements</a>
-              </li>
-              <li>
-                <a class="nav-link" href="#Projects">Projects</a>
-              </li>
-              <li>
-                <a class="nav-link" href="#Certifications">Certifications</a>
-              </li>
-              <li>
-                <a class="nav-link" href="#Contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- </a> -->
-      </li>
-      <li class="nav-item">
-        <a class="nav-link initial" href="#" aria-current="page">Ruur</a>
-      </li>
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-      <li class="nav-item-item">
-        <a class="nav-link" href="#Biodata">Biodata</a>
-      </li>
-      <li class="nav-item-item">
-        <a class="nav-link" href="#Achievements">Achievements</a>
-      </li>
-      <li class="nav-item-item">
-        <a class="nav-link" href="#Projects">Projects</a>
-      </li>
-      <li class="nav-item-item">
-        <a class="nav-link" href="#Certifications">Certifications</a>
-      </li>
-      <li class="nav-item-item">
-        <a class="nav-link" href="#Contact">Contact</a>
-      </li>
-    </ul>
-    <div class="all-body-cover">
-      <img
-        width="200px"
-        src="assets/image/septian.jpeg"
-        class="img-thumbnail rounded-circle mx-auto d-block"
-        alt="..."
-      />
-      <div class="nama">
-        <h4 class="text-center fw-bold">Septian Alif</h4>
-        <h5 class="text-center">Backend Developer</h5>
-      </div>
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
 
-      <svg
-        class="waves"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-      >
-        <path
-          fill="#ffffff"
-          fill-opacity="1"
-          d="M0,160L48,149.3C96,139,192,117,288,144C384,171,480,245,576,272C672,299,768,277,864,250.7C960,224,1056,192,1152,186.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-      </svg>
-      <div class="firstContainer">
-        <div class="content">
-          <h2
-            data-aos="fade-up"
-            data-aos-duration="800"
-            id="Biodata"
-            class="nameHeading fw-bold"
-          >
-            BIODATA
-          </h2>
-          <div class="container text-center">
-            <div class="row">
-              <div
-                data-aos="fade-up"
-                data-aos-duration="800"
-                class="col-sm-4 mb-2"
-              >
-                Hello, introduce my name is Septian Alif who is
-                often called Fahrul. I am a back-end web developer using
-                technology from JavaScript and PHP. For now, I am a graduate of
-                a vocational high school with a major in computer and network
-                engineering, graduating in 2022. I have had many achievements
-                and awards while I was at school, I also served as chairman of
-                the programming club in my school's extracurriculars.
-              </div>
-              <div
-                data-aos="fade-up"
-                data-aos-duration="800"
-                class="col-sm-4 mb-2"
-              >
-                <h4 class="subNameHeading fw-bold">EDUCATION</h4>
-                <div class="education">
-                  <!-- Button trigger modal -->
-                  <p class="startEnd">Started on Jul 2010</p>
-                  <button
-                    type="button"
-                    class="btn btn-danger itemEdu"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal1"
-                  >
-                    SDN 001 ANAMBAS
-                  </button>
+<body>
 
-                  <!-- Modal -->
-                  <div
-                    class="modal fade"
-                    id="exampleModal1"
-                    tabindex="-1"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">
-                            Achievement
-                          </h5>
-                          <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
-                        <div class="modal-body">champion in the class</div>
-                        <div class="modal-footer">
-                          <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                          >
-                            Close
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="startEnd">Finished on Jun 2016</p>
-                  <i class="fas fa-arrow-circle-down itemEdu"></i>
-                  <!-- <i class="fas fa-arrow-circle-down itemEdu"></i> -->
-                  <p class="startEnd">Started on Jul 2016</p>
-                  <button
-                    type="button"
-                    class="btn btn-danger itemEdu"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal2"
-                  >
-                    SMPN NU
-                  </button>
+  <!--
+    - #MAIN
+  -->
 
-                  <!-- Modal -->
-                  <div
-                    class="modal fade"
-                    id="exampleModal2"
-                    tabindex="-1"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">
-                            Achievement
-                          </h5>
-                          <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
-                        <div class="modal-body">champion in the class</div>
-                        <div class="modal-footer">
-                          <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                          >
-                            Close
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="startEnd">Finished on Jun 2019</p>
-                  <i class="fas fa-arrow-circle-down itemEdu"></i>
-                  <!-- <i class="fas fa-arrow-circle-down itemEdu"></i> -->
-                  <p class="startEnd">Started on Jul 2019</p>
-                  <button
-                    type="button"
-                    class="btn btn-danger itemEdu"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal3"
-                  >
-                    SMKN 10 MALANG
-                  </button>
+  <main>
 
-                  <!-- Modal -->
-                  <div
-                    class="modal fade"
-                    id="exampleModal3"
-                    tabindex="-1"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">
-                            Achievement
-                          </h5>
-                          <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
-                        <div class="modal-body">
-                          1. 8th place in the MALANG district web technology
-                          competition. <br />
-                          2. 1st place in the MALANG district scientific work
-                          competition. <br />
-                          3. Won a silver medal at the National Science Olympiad
-                          in Physics. <br />
-                          4. Won a silver medal at the National Science Olympiad
-                          in Chemistry. <br />
-                          5. Won a bronze medal at the National Science Olympiad
-                          in Biology. <br />
-                          6. Microsoft office webinar resource persons. <br />
-                          7. Head of programming club SMKN 10 West MALANG.
-                          <br />
-                          8. Champion class
-                        </div>
-                        <div class="modal-footer">
-                          <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                          >
-                            Close
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="startEnd">Finished on Jun 2022</p>
-                  <i class="fas fa-arrow-circle-down itemEdu"></i>
-                  <!-- <i class="fas fa-arrow-circle-down itemEdu"></i> -->
-                  <p class="startEnd">Started on</p>
-                  <button
-                    type="button"
-                    class="btn btn-danger itemEdu"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal4"
-                  >
-                    University (Coming Soon)
-                  </button>
-
-                  <!-- Modal -->
-                  <div
-                    class="modal fade"
-                    id="exampleModal4"
-                    tabindex="-1"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">
-                            Achievement
-                          </h5>
-                          <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
-                        <div class="modal-body">Not yet</div>
-                        <div class="modal-footer">
-                          <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                          >
-                            Close
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div data-aos="fade-up" data-aos-duration="800" class="col-sm-4">
-                My hobby is making websites and looking for new things or
-                technologies that I can apply to my website, then I usually
-                upload them to GitHub as an archive as well as my repository.
-                Apart from creating a website, I also have an interest in being
-                a content creator, I have a TikTok account and also YouTube
-                where I express my work
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- second -->
-    <div class="secondContainer">
-      <h2
-        data-aos="fade-up"
-        data-aos-duration="800"
-        id="Achievements"
-        class="achive fw-bold"
-      >
-        ACHIEVEMENTS
-      </h2>
-      <div class="container mx-auto">
-        <div class="row">
-          <div class="col-sm-3">
-            <div
-              data-aos="fade-up"
-              data-aos-duration="800"
-              class="card text-dark mb-3 mx-auto"
-              style="max-width: 18rem"
-            >
-              <div class="card-header">Organization</div>
-              <div class="card-body">
-                <h5 class="card-title">Programming Club</h5>
-                <p class="card-text">
-                  Became general chairman of the extracurricular programming
-                  club at Vocational High Schools.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div
-              data-aos="fade-up"
-              data-aos-duration="800"
-              class="card text-dark mb-3 mx-auto"
-              style="max-width: 18rem"
-            >
-              <div class="card-header">Competence</div>
-              <div class="card-body">
-                <h5 class="card-title">Web Technology</h5>
-                <p class="card-text">
-                  Became the youngest participant and succeeded in becoming a
-                  champion in the Bekasi district Web Technology competition.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div
-              data-aos="fade-up"
-              data-aos-duration="800"
-              class="card text-dark mb-3 mx-auto"
-              style="max-width: 18rem"
-            >
-              <div class="card-header">Technique</div>
-              <div class="card-body">
-                <h5 class="card-title">Programming Concept</h5>
-                <p class="card-text">
-                  Able to apply the concept of MVC and Clean Code to the
-                  program.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div
-              data-aos="fade-up"
-              data-aos-duration="800"
-              class="card text-dark mb-3 mx-auto"
-              style="max-width: 18rem"
-            >
-              <div class="card-header">Back-end Developer</div>
-              <div class="card-body">
-                <h5 class="card-title">JavaScript</h5>
-                <p class="card-text">
-                  Able to create websites with JavaScript technology such as
-                  MongoDB Express EJS Node.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- third -->
-    <svg
-      class="wavesss"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1440 320"
-    >
-      <path
-        fill="#ffffff"
-        fill-opacity="1"
-        d="M0,0L48,53.3C96,107,192,213,288,234.7C384,256,480,192,576,181.3C672,171,768,213,864,245.3C960,277,1056,299,1152,298.7C1248,299,1344,277,1392,266.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-      ></path>
-    </svg>
-    <div class="thirdContainer">
-      <h2
-        data-aos="fade-up"
-        data-aos-duration="800"
-        id="Projects"
-        class="projects fw-bold"
-      >
-        PROJECTS
-      </h2>
-      <div class="categoryy">
-        <div class="container">
-          <div class="row justify-content-md-center">
-            <div data-aos="fade-up" data-aos-duration="800" class="col">
-              <div class="article-container-firstRow text-uppercase mx-auto">
-                <a
-                  href="https://ruurmerch.000webhostapp.com/"
-                  style="text-decoration: none"
-                >
-                  <div class="article-img-holder-firstRow">Online Shop</div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="row justify-content-md-center">
-            <div class="col">
-              <div class="article-container-secondRow text-uppercase mx-auto">
-                <a href="#" style="text-decoration: none">
-                  <div class="article-img-holder-secondRow tshirt">t-shirt</div>
-                </a>
-              </div>
-            </div>
-            <div class="col">
-              <div class="article-container-secondRow text-uppercase mx-auto">
-                <a href="#" style="text-decoration: none">
-                  <div class="article-img-holder-secondRow outer">outer</div>
-                </a>
-              </div>
-            </div>
-            <div class="col">
-              <div class="article-container-secondRow text-uppercase mx-auto">
-                <a href="#" style="text-decoration: none">
-                  <div class="article-img-holder-secondRow shirt">shirt</div>
-                </a>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="row justify-content-md-center">
-            <div class="col">
-              <div class="article-container-secondRow text-uppercase mx-auto">
-                <a href="#" style="text-decoration: none">
-                  <div class="article-img-holder-secondRow pants">pants</div>
-                </a>
-              </div>
-            </div>
-            <div class="col">
-              <div class="article-container-secondRow text-uppercase mx-auto">
-                <a href="#" style="text-decoration: none">
-                  <div class="article-img-holder-secondRow accessories">
-                    accessories
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col">
-              <div class="article-container-secondRow text-uppercase mx-auto">
-                <a href="#" style="text-decoration: none">
-                  <div class="article-img-holder-secondRow dress">DRESS</div>
-                </a>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="row justify-content-md-center">
-            <div class="col">
-              <div class="article-container-thirdRow text-uppercase mx-auto">
-                <a href="#" style="text-decoration: none">
-                  <div class="article-img-holder-thirdRow kerudung">
-                    kerudung
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col">
-              <div class="article-container-thirdRow text-uppercase mx-auto">
-                <a href="#" style="text-decoration: none">
-                  <div class="article-img-holder-thirdRow rok">rok</div>
-                </a>
-              </div>
-            </div>
-          </div> -->
-        </div>
-      </div>
-    </div>
-    <svg
-      class="botWaves"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1440 320"
-    >
-      <path
-        fill="#ffffff"
-        fill-opacity="1"
-        d="M0,64L48,101.3C96,139,192,213,288,224C384,235,480,181,576,181.3C672,181,768,235,864,229.3C960,224,1056,160,1152,138.7C1248,117,1344,139,1392,149.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-      ></path>
-    </svg>
-    <div class="fourthContainer">
-      <h2
-        data-aos="fade-up"
-        data-aos-duration="800"
-        id="Certifications"
-        class="achive text-center fw-bold"
-      >
-        CERTIFICATION
-      </h2>
-      <div class="container">
-        <div
-          data-aos="fade-up"
-          data-aos-duration="800"
-          class="table-responsive"
-        >
-          <table class="table mx-auto table-hover table-light table-striped">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Organizer</th>
-                <th scope="col">Date</th>
-                <th scope="col">Credential</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Cloud Practitioner Essentials</td>
-                <td>Dicoding & AWS</td>
-                <td>March 1, 2023</td>
-                <td>
-                  <a class="btn btn-primary mx-info" href="https://drive.google.com/file/d/19rnhx_DibRpnkFwaBxljR6cNYqEc-2cr/view?usp=share_link" role="button"
-                    >View</a
-                  >
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Belajar Membuat Aplikasi Back-End untuk Pemula</td>
-                <td>Dicoding & AWS</td>
-                <td>March 6, 2023</td>
-                <td>
-                  <a class="btn btn-primary mx-info" href="https://drive.google.com/file/d/1ScF8zRGMArwRD4_2WxR0tbsIbVehPW5y/view?usp=share_link" role="button"
-                    >View</a
-                  >
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <svg
-      class="wavesContact"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1440 320"
-    >
-      <path
-        fill="#ffffff"
-        fill-opacity="1"
-        d="M0,32L60,58.7C120,85,240,139,360,133.3C480,128,600,64,720,69.3C840,75,960,149,1080,154.7C1200,160,1320,96,1380,64L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-      ></path>
-    </svg>
-    <div class="fivethContainer">
-      <h2 id="Contact" class="contactMe fw-bold">CONTACT</h2>
-      <div class="container">
-        <div class="linkSosmed">
-          <a
-            class="itemSosmed"
-            href="https://www.linkedin.com/in/alifas"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-          <a class="itemSosmed" href="https://instagram.com/cahyox_1"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a class="itemSosmed" href="https://www.tiktok.com/@c"
-            ><i class="fab fa-tiktok"></i
-          ></a>
-          <a class="itemSosmed" href="https://youtube.com/@aliff.c"
-            ><i class="fab fa-youtube"></i
-          ></a>
-          <a class="itemSosmed" href="irfannbotjelekjelek@gmail.com"
-            ><i class="fab fa-google"></i
-          ></a>
-          <a class="itemSosmed" href="https://github.com/"
-            ><i class="fab fa-github"></i
-          ></a>
-        </div>
-        <p class="text-center">Created by <a href="#">@aliff.c</a></p>
-      </div>
-    </div>
-    <script src="assets/stylesheet/app.js"></script>
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.rawgit.com/michalsnik/aos/2.0.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+      - #SIDEBAR
     -->
-  </body>
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.jpeg" alt="Septian alief" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Denny Nugraha">Denny Nugraha</h1>
+
+          <p class="title">Web developer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:tekaje4malang@gmail.com" class="contact-link">tekaje4malang@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+6282131088084" class="contact-link">+62 82131088084</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Website Creation Date</p>
+
+              <time datetime="1982-06-23">januari 29, 2024</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Jawa Timur, Malang, IDN</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Blog</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I am the homeroom teacher of TKJ 4 
+            I'm Creative Director and UI/UX Designer from Sydney, Indonesia, working in web development and print media.
+            I enjoy
+            turning complex problems into simple, beautiful and intuitive designs.
+          </p>
+
+          <p>
+            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
+            Moreover, I
+            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
+            across your
+            message and identity in the most creative way. I created web design for many famous brand companies.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web design</h4>
+
+                <p class="service-item-text">
+                  The most modern and high-quality design made at a professional level.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web development</h4>
+
+                <p class="service-item-text">
+                  High-quality development of sites at the professional level.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mobile apps</h4>
+
+                <p class="service-item-text">
+                  Professional development of applications for iOS and Android.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Photography</h4>
+
+                <p class="service-item-text">
+                  I make high-quality photos of any category at a professional level.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials
+        -->
+
+        <section class="testimonials">
+
+          <h3 class="h3 testimonials">Structure</h3>
+
+          <ul class="testimonials has-scrollbar">
+
+            <li class="testimonials">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-1.jpeg" alt="Septian Alief" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Septian alief</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    my name is Septian alief, I am the Chair of TKJ 4 class, And I am in charge of guarding the class, and responsible , And I always / monitor the state of TKJ 4 Class Situation!!
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-2.jpeg" alt="" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Chelsea Ocha</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    my name is Chelsea Ocha, I am the Vice President of TKJ 4 , And I am in charge of guarding the class, and responsible , And I always / monitor the state of the situation of TKJ 4 class!!
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-3.jpeg" alt="Uswatul Hasana" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Uswatul Hasana</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    My name is Uswatul Hasana, I am the Treasurer of TKJ 4, and I aim to collect class fees and pay TKJ 4 class fees!!
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-4.jpeg" alt="Herlina Agustin" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Herlina Agustin</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Rmy name is Herlina Agustin, I am the Secretary of TKJ 4, And I am in charge of liaison between teachers and students who have to do tasks and activities together in TKJ 4 class!!
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.jpeg" alt="Septian Alif" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Septian Alif</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                  Septian Alief was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <!--
+          - clients
+        -->
+
+        <section class="clients">
+
+          <h3 class="h3 clients-title">Clients</h3>
+
+          <ul class="clients-list has-scrollbar">
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-1-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-2-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-3-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-4-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-5-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-6-color.png" alt="client logo">
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">School of SMK 10 Malang</h4>
+
+              <span>2023 — 2024</span>
+
+              <p class="timeline-text">
+                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
+                quas molestias
+                exceptur.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">New york academy of art</h4>
+
+              <span>2023 — 2024</span>
+
+              <p class="timeline-text">
+                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
+                omnis..
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">High school of art and design</h4>
+
+              <span>2002 — 2004</span>
+
+              <p class="timeline-text">
+                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
+                magni dolores
+                eos.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Creative director</h4>
+
+              <span>2015 — Present</span>
+
+              <p class="timeline-text">
+                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
+                molestias
+                exceptur.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Art director</h4>
+
+              <span>2013 — 2015</span>
+
+              <p class="timeline-text">
+                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
+                quas molestias
+                exceptur.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Web designer</h4>
+
+              <span>2010 — 2013</span>
+
+              <p class="timeline-text">
+                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
+                quas molestias
+                exceptur.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Web design</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Graphic design</h5>
+                <data value="70">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Branding</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">WordPress</h5>
+                <data value="50">50%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 50%;"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Applications</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web development</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Finance</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Orizon</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Fundo</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Brawlhalla</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                </figure>
+
+                <h3 class="project-title">DSM.</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">MetaSpark</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Summary</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Task Manager</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Arrival</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="blog" data-page="blog">
+
+        <header>
+          <h2 class="h2 article-title">Blog</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.jpeg" alt="Memories of TKJ 4 #1" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2023</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Memories of TKJ 4 #1</h3>
+
+                  <p class="blog-text">
+                    This is a memory Photo with 1 Class TKJ 4 
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.jpeg" alt="Memories of TKJ 4 #2" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2023</time>
+                  </div>
+
+                  <Memories class="h3 blog-item-title">Memories of TKJ 4 #2</h3>
+
+                  <p class="blog-text">
+                    This is a memory Photo with 1 Class TKJ 4 
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-3.jpeg" alt="Memories of TKJ 4 #3" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2023</time>
+                  </div>
+
+                  <Memories class="h3 blog-item-title">Memories of TKJ 4 #3</h3>
+
+                  <p class="blog-text">
+                    This is a memory Photo with 1 Class TKJ 4 
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-4.jpeg" alt="Memories of TKJ 4 #4" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2023</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Memories of TKJ 4 #4</h3>
+
+                  <p class="blog-text">
+                    This is a memory Photo with 1 Class TKJ 4 
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-5.jpeg" alt="Memories of TKJ 4 #5" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2023</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Memories of TKJ 4 #5</h3>
+
+                  <p class="blog-text">
+                    This is a memory Photo with 1 Class TKJ 4 
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-6.jpeg" alt="Memories of TKJ 4 #6" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2023</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Memories of TKJ4 #6</h3>
+
+                  <p class="blog-text">
+                    This is a memory Photo with 1 Class TKJ 4 
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
 </html>
